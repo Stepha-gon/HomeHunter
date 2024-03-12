@@ -1,0 +1,1 @@
+{"version":3,"sources":["app.scss","app.css"],"names":[],"mappings":"AACA,KACE,wBCAF","file":"app.css","sourcesContent":["$rojo: rgb(97, 81, 167);\r\nbody {\r\n  background-color: $rojo;\r\n}\r\n","body {\n  background-color: rgb(97, 81, 167);\n}"]}
