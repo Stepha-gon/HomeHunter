@@ -1,4 +1,12 @@
-$rojo: rgb(97, 81, 167);
-body {
-  background-color: $rojo;
-}
+//* Generals
+
+@import "base/normalize";
+@import "base/variables";
+@import "base/mixins";
+@import "base/globales";
+@import "base/utilidades";
+
+//* UI
+@import "layout/header";
+@import "layout/footer";
+@import "layout/navegacion";
