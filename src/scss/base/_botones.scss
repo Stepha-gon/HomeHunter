@@ -1,0 +1,17 @@
+.boton-amarillo {
+  @include boton($amarillo);
+  display: block;
+
+  &:hover {
+    background-color: darken($amarillo, 10%);
+  }
+}
+
+.boton-verde {
+  @include boton($verde);
+  color: $blanco;
+  display: inline-block;
+  &:hover {
+    background-color: darken($verde, 10%);
+  }
+}
