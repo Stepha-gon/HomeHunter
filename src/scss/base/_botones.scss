@@ -5,6 +5,10 @@
   &:hover {
     background-color: darken($amarillo, 10%);
   }
+
+  &.centrar {
+    display: inline-block;
+  }
 }
 
 .boton-verde {
