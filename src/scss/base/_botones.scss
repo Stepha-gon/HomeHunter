@@ -15,7 +15,9 @@
   @include boton($verde);
   color: $blanco;
   display: inline-block;
+  margin-top: 2rem;
   &:hover {
     background-color: darken($verde, 10%);
+    cursor: pointer;
   }
 }
