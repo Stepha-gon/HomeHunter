@@ -47,7 +47,7 @@ function javascript(done) {
     .pipe(terser())
     .pipe(sourcemaps.write("."))
     .pipe(rename({ suffix: ".min" }))
-    .pipe(dest("./build/js"));
+    .pipe(gulp.dest("build/js"));
   done();
 }
 

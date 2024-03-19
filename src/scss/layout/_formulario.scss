@@ -2,7 +2,7 @@
   p {
     font-size: 1.4rem;
     color: $grisOscuro;
-    margin: 2rem 0;
+    margin: 1rem 0;
   }
   legend {
     font-size: 2rem;
@@ -14,14 +14,9 @@
     display: block;
   }
 
-  textarea {
-    height: 200px;
-  }
-
   input:not([type="submit"]),
   textarea,
   select {
-    height: 40px;
     padding-left: 1rem;
     display: block;
     width: 100%;
@@ -29,6 +24,15 @@
     border: 1px solid $gris;
     border-radius: 1rem;
     margin-bottom: 2rem;
+  }
+
+  input:not([type="submit"]),
+  select {
+    height: 40px;
+  }
+
+  textarea {
+    height: 200px;
   }
 
   .forma-contacto {
