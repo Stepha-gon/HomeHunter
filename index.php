@@ -1,35 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="build/css/app.css" />
-    <title>HomeHunter</title>
-  </head>
-  <body>
-    <header class="header inicio">
-      <div class="contenedor contenido-header">
-        <div class="barra">
-          <a href="index.html">
-            <img src="src/img/logo.svg" alt="logotipo compania" />
-          </a>
-          <div class="mobile-menu">
-            <img src="src/img/barras.svg" alt="icono menu responisve" />
-          </div>
-          <div class="derecha">
-            <img class="dark-mode-boton" src="src/img/dark-mode.svg" alt="modo nocturno" />
-            <nav class="navegacion">
-              <a href="nosotros.html">Nosotros</a>
-              <a href="anuncios.html">Anuncios</a>
-              <a href="blog.html">Blog</a>
-              <a href="contacto.html">Contacto</a>
-            </nav>
-          </div>
-        </div>
-
-        <h1>Venta de Casas y Apartamentos de lujo</h1>
-      </div>
-    </header>
+<?php
+  require 'includes/funciones.php';
+  
+  incluirTemplate('header',$inicio=true);
+    
+?>
 
     <main class="contenedor">
       <h1>Servicios HomeHunter</h1>
@@ -181,7 +155,7 @@
           <div class="texto-entrada">
             <a href="entrada.html">
               <h4>Terraza en el techo de tu casa</h4>
-              <p>Escrito el: <span>15/03/2024 </span> Autor: <span>Stephanie Gonzalez</span></p>
+              <p class="fecha-entrada">Escrito el: <span>15/03/2024 </span> Autor: <span>Stephanie Gonzalez</span></p>
               <p>
                 Consejos para construir una terraza en el techo de tu casa con los mejores
                 materiales y un mayor ahorro de dinero.
@@ -199,7 +173,7 @@
           <div class="texto-entrada">
             <a href="entrada.html">
               <h4>Guía para la decoración de tu hogar</h4>
-              <p>Escrito el: <span> 15/03/2024</span> Autor: <span>Stephanie Gonzalez</span></p>
+              <p class="fecha-entrada">Escrito el: <span> 15/03/2024</span> Autor: <span>Stephanie Gonzalez</span></p>
               <p>
                 Maximiza el espacio en tu hogar con esta guia, aprende a combinar muebles y colores
                 para darle vida a tu espacio
@@ -219,18 +193,8 @@
         </div>
       </section>
     </div>
-    <footer class="footer seccion">
-      <div class="contenedor contenedor-footer">
-        <nav class="navegacion">
-          <a href="nosotros.html">Nosotros</a>
-          <a href="anuncios.html">Anuncios</a>
-          <a href="blog.html">Blog</a>
-          <a href="contacto.html">Contacto</a>
-        </nav>
-      </div>
-      <p class="copyright">Todos los derechos reservados 2024 &copy;</p>
-    </footer>
+    <?php
+    
+      incluirTemplate('footer');
+    ?>
 
-    <script src="build/js/bundle.min.js"></script>
-  </body>
-</html>
