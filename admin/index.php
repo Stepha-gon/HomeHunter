@@ -7,7 +7,7 @@
 
     <main class="contenedor">
       <h1>Administrador HomeHunter</h1>
-      <a href="/homehunter/admin/propiedades/crear.php" class="boton boton-verde" > Nueva Propiedad</a>
+      <a href="/admin/propiedades/crear.php" class="boton boton-verde" > Nueva Propiedad</a>
     </main>
 
     <?php
