@@ -11,7 +11,7 @@
       <div class="contenedor contenido-header">
         <div class="barra">
           <a href="index.php">
-            <img src="/src/img/logo.svg" alt="logotipo compania" />
+            <img src="/src/img/logo.png" alt="logotipo compania" />
           </a>
           <div class="mobile-menu">
             <img src="/src/img/barras.svg" alt="icono menu responisve" />

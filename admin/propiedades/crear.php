@@ -2,6 +2,8 @@
 
 
 //base datos
+
+
 require '../../includes/config/database.php';
 
 $db=conectarDB();
@@ -39,6 +41,14 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
   $estacionamiento=mysqli_real_escape_string ($db,$_POST['estacionamiento']);
   $vendedores_id=mysqli_real_escape_string ($db,$_POST['vendedor']);
   $creado=date('Y/m/d');
+ //* asignar files hacia una variable
+  $imagen=$_FILES['imagen'];
+
+  //validar por tamaño 1mb max 
+
+  $medida=1000*1000;
+
+  
   
   if(!$titulo){
     $errores[]="debes añadir un titulo";
@@ -46,31 +56,53 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
   if(!$precio){
     $errores[]="El precio es obligatorio";
   }
-  
+  if(!$imagen['name']){
+    $errores[]="La imagen es obligatoria";
+  }
+  if($imagen['size']>$medida){
+    $errores[]="La imagen es demasiado pesada";
+  }
   if(strlen($descripcion)<50){
     $errores[]="Añade una descripcion de la propiedad de al menos 50 caracteres";
   }
   if(!$habitaciones){
-    $errores[]="Campo Obligatorio";
+    $errores[]="Número de habitaciones es obligatorio";
   }
   if(!$wc){
-    $errores[]="Campo Obligatorio";
+    $errores[]="Número de baños es obligatorio";
   }
   if(!$estacionamiento){
-    $errores[]="Campo Obligatorio";
+    $errores[]="Número de estacionamientos es obligatorio";
   }
   
   if(!$vendedores_id){
-    $errores[]="Campo Obligatorio";
+    $errores[]="Debe elegir un vendedor";
   }
-  
-  
+
   //* Validar que no hayan errores array=null
   
   if(empty($errores)){
+
+
+    //*subida de archivos por medio de la creacion de una carpeta
+
+    $carpetaImagenes='../../imagenes/';
+    //. crear directorio
+
+    if(!is_dir($carpetaImagenes)){
+      mkdir($carpetaImagenes);
+
+    }
+
+    //* Generar nombres unicos de imagenes
+
+    $nombreImagen=md5 (uniqid(rand(),true)). ".jpg";
+    
+    //*subir imagen
+    move_uploaded_file($imagen['tmp_name'],$carpetaImagenes . $nombreImagen );
     //* Insertar en la base de datos
     
-    $query="INSERT INTO propiedades (titulo,precio,descripcion,habitaciones,wc,estacionamiento, creado,vendedores_id) VALUES('$titulo','$precio', '$descripcion','$habitaciones','$wc','$estacionamiento','$creado','$vendedores_id')   ";
+    $query="INSERT INTO propiedades (titulo,precio, imagen,descripcion,habitaciones,wc,estacionamiento, creado,vendedores_id) VALUES('$titulo','$precio','$nombreImagen', '$descripcion','$habitaciones','$wc','$estacionamiento','$creado','$vendedores_id')   ";
     
     //echo $query;
     
@@ -78,19 +110,12 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
     if($resultado){
       //redireccionar al usuario
 
-      header('Location: /admin');
+      header('Location: /admin?resultado=1');
     }
   }
-  
-  
-  
+
 }
-
-
-
-
 ?>
-
 <main class="contenedor">
 <h1>Crear</h1>
 <a href="/admin/index.php" class="boton boton-verde" > Volver</a>
@@ -102,9 +127,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
   
   <?php endforeach; ?> 
   
-  
-  
-  <form class="formulario" method="POST" action="/admin/propiedades/crear.php">
+  <form class="formulario" method="POST" action="/admin/propiedades/crear.php" enctype="multipart/form-data">
   <fieldset>
   <legend>Informacion General </legend>
   <label for="titulo">Titulo:</label>

@@ -21,3 +21,17 @@
     cursor: pointer;
   }
 }
+.boton-rojo-block {
+  @include boton($rojo);
+  display: block;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.boton-verde-block {
+  @include boton($verde);
+  display: block;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
