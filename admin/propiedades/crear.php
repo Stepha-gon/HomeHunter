@@ -1,6 +1,12 @@
 <?php
 
-
+//*incluir template
+  require '../../includes/funciones.php';
+  $auth=estaAutenticado();
+  //. Inicio de sesion
+  if(!$auth){
+    header('Location:/');
+  }
 //base datos
 
 
@@ -14,7 +20,7 @@ $db=conectarDB();
 $consulta="SELECT * FROM vendedores";
 $resultadoConsulta=mysqli_query($db,$consulta);
 
-require '../../includes/funciones.php';
+
 
 incluirTemplate('header');
 

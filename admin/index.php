@@ -1,4 +1,12 @@
 <?php
+
+  //*incluir template
+  require '../includes/funciones.php';
+  $auth=estaAutenticado();
+  //. Inicio de sesion
+  if(!$auth){
+    header('Location:/');
+  }
   //* importar conexion
   require '../includes/config/database.php';
   $db=conectarDB();
@@ -38,8 +46,7 @@
      }
   }
 
-  //*incluir template
-  require '../includes/funciones.php';
+
   
   incluirTemplate('header');
     
@@ -87,6 +94,8 @@
           <?php endwhile; ?>
         </tbody>
       </table>
+
+      <a href="../cerrar-sesion.php" class="boton boton-rojo" > Cerrar sesion</a>
     </main>
 
     <?php

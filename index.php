@@ -44,91 +44,12 @@
 
     <section class="seccion contenedor">
       <h2>Casas y Apartamentos en venta</h2>
-      <div class="contenedor-anuncios">
-        <div class="anuncio">
-          <picture>
-            <source srcset="src/img/anuncio1.webp" type="imagen/webp" />
-            <img loading="lazy" src="src/img/anuncio1.jpg" alt="anuncio" />
-          </picture>
-          <div class="contenido-anuncio">
-            <h3>Casa de lujo con vista al lago</h3>
-            <p>Casa en el lago con exelente vista, acabados de lujo a un exelente precio</p>
-            <p class="precio">1200'000.000 COP</p>
-
-            <ul class="iconos-caracteristicas">
-              <li>
-                <img loading="lazy" src="src/img/icono_wc.svg" alt="icono wc" />
-                <p>3</p>
-              </li>
-              <li>
-                <img loading="lazy" src="src/img/icono_estacionamiento.svg" alt="icono wc" />
-                <p>4</p>
-              </li>
-              <li>
-                <img loading="lazy" src="src/img/icono_dormitorio.svg" alt="icono wc" />
-                <p>5</p>
-              </li>
-            </ul>
-            <a class="boton boton-amarillo" href="anuncio.html"> Ver propiedad </a>
-          </div>
-        </div>
-        <div class="anuncio">
-          <picture>
-            <source srcset="src/img/anuncio2.webp" type="imagen/webp" />
-            <img loading="lazy" src="src/img/anuncio2.jpg" alt="anuncio" />
-          </picture>
-          <div class="contenido-anuncio">
-            <h3>Apartamento terminados de lujo</h3>
-            <p>Casa en el centro de la ciudad con diseño y amueblado lujoso.</p>
-            <p class="precio">1000'000.000 COP</p>
-
-            <ul class="iconos-caracteristicas">
-              <li>
-                <img loading="lazy" src="src/img/icono_wc.svg" alt="icono wc" />
-                <p>3</p>
-              </li>
-              <li>
-                <img loading="lazy" src="src/img/icono_estacionamiento.svg" alt="icono wc" />
-                <p>4</p>
-              </li>
-              <li>
-                <img loading="lazy" src="src/img/icono_dormitorio.svg" alt="icono wc" />
-                <p>5</p>
-              </li>
-            </ul>
-            <a class="boton boton-amarillo" href="anuncio.html"> Ver propiedad </a>
-          </div>
-        </div>
-        <div class="anuncio">
-          <picture>
-            <source srcset="src/img/anuncio3.webp" type="imagen/webp" />
-            <img loading="lazy" src="src/img/anuncio3.jpg" alt="anuncio" />
-          </picture>
-          <div class="contenido-anuncio">
-            <h3>Casa con alberca incluida en Jardin</h3>
-            <p>Casa espaciosa ubicada en las afueras de la ciudad con alberca incluida</p>
-            <p class="precio">1500'000.000 COP</p>
-
-            <ul class="iconos-caracteristicas">
-              <li>
-                <img loading="lazy" src="src/img/icono_wc.svg" alt="icono wc" />
-                <p>3</p>
-              </li>
-              <li>
-                <img loading="lazy" src="src/img/icono_estacionamiento.svg" alt="icono wc" />
-                <p>4</p>
-              </li>
-              <li>
-                <img loading="lazy" src="src/img/icono_dormitorio.svg" alt="icono wc" />
-                <p>5</p>
-              </li>
-            </ul>
-            <a class="boton-amarillo" href="anuncio.html"> Ver propiedad </a>
-          </div>
-        </div>
-      </div>
+      <?php 
+      $limite=3;
+      include 'includes/templates/anuncios.php';
+      ?>
       <div class="alinear-derecha">
-        <a class="boton-verde" href="anuncios.html">Ver Todas</a>
+        <a class="boton-verde" href="anuncios.php">Ver Todas</a>
       </div>
     </section>
 

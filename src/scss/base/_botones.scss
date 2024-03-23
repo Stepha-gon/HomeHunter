@@ -16,6 +16,7 @@
   color: $blanco;
   display: inline-block;
   margin-top: 2rem;
+  width: 20rem;
   &:hover {
     background-color: darken($verde, 10%);
     cursor: pointer;
@@ -34,4 +35,11 @@
   display: block;
   margin-top: 2rem;
   margin-bottom: 2rem;
+}
+.boton-rojo {
+  @include boton($rojo);
+  display: inline-block;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  width: 20rem;
 }
